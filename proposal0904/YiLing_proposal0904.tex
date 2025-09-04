@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{epstopdf}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{subfigure}
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\title{Does Entrepreneurship Mitigate or Exacerbate Social Mobility? }
+\author{Yi LING}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\begin{document}
+\doublespacing
+\maketitle
+
+\subsection{Research Question}
+
+Wealth inequality can be explained by the low intergenerational mobility, and the high concentration of the rich households, many of whom are entrepreneurs.  On the one hand, many entrepreneurs inherit businesses from previous generations, which lowers mobility, but they have a chance of expanding the business. On the other hand, self-made entrepreneurs can achieve upward mobility, climbing the social ladder, but face a higher probability of failure. Moreover, according to the private equity premium puzzle, entrepreneurial returns are lower than public returns. Then Why do individuals choose entrepreneurship despite a higher risk of failure and evidence of lower average returns? Does entrepreneurship increase social mobility?
+
+\subsection{Economic Framework and Empirical Design}
+
+To illustrate the research question, the first step is to compare the wealth distribution of entrepreneurs and non-entrepreneurs. The second step is to calculate the returns from their work. Entrepreneurs are further divided into dynastic and self-made categories. Next, to identify the mobility, I calculate intergenerational income elasticity separately for non-entrepreneurs, dynastic entrepreneurs, and self-made entrepreneurs. This comparison reveals whether entrepreneurship is correlated with intergenerational mobility. OLS regression is conducted in this way, $ln(Y)$ refers to the logarithm of wealth of parents or children, $\textbf{X}$ represents the demographic variables we control, including age, years of schooling:
+
+\begin{equation}
+ln(Y_{child})=\beta_0+\beta_1 In(Y_{parent})+\beta_x \textbf{X}+\epsilon  \\
+\end{equation}
+
+In addition, to examine whether wealthier households obtain higher returns, I regress entrepreneurial returns on wealth rank and compare the coefficients across categories (non-entrepreneurs, self-made entrepreneurs, and dynastic entrepreneurs):
+
+\begin{equation}
+ln(returns)=\gamma_0+\gamma_1 Y_{rank}+\gamma_w \textbf{W}+\xi \\
+\end{equation}
+
+\subsection{Data}
+
+The unit of the data is a household with two generations, and the data should have the household information, including the type of entrepreneurs and the wealth distribution. If some households have missing income data for certain reason, Heckman model is needed. I have some possible data sources: first, Chinese Family Panel Survey (CFPS) is a panel dataset collecting wealth information every three years, which also has the information for household's siblings, so it's easier to probit the income of the household. I conducted the research of entrepreneurship impact on mobility using CFPS 2018 before and I think the result will be more robust when it becomes panel data. Second, Current Population Survey (CPS)  also provides wealth information and could connect the generations together. 
+
+\end{document}
