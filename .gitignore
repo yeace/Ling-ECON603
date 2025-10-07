@@ -155,8 +155,9 @@ pythontex-files-*/
 
 ## Other
 *.DS_Store
+.DS_Store
+.DS_Store?
 *.zip
 *.xwm
-*.do.stswp
 
 ## Folders to ignore
