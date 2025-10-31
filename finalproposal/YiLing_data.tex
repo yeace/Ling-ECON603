@@ -1,0 +1,40 @@
+%Input preamble
+\input{preamble}
+\begin{document}
+
+
+\title{\Large \textbf{Does Entrepreneurship Mitigate or Exacerbate Social Mobility? }}
+\author{Yi Ling}
+
+\date{\today}
+
+\maketitle
+
+\thispagestyle{empty} 
+\doublespacing
+\thispagestyle{empty} 
+
+\section{Research Question}
+This proposal aims to compare the outcomes of two types of entrepreneurs:  nascent entrepreneurs and entrepreneurs whose family is also self-employed, and examine whether the first type faces lower intergenerational mobility than the second type, in other words, can people from a non-entrepreneur family background climb up the social ladder through choosing to start a business?
+
+\section{Data Description}
+There are many data sources that provide information on income, profits, and investments for entrepreneurs and their family backgrounds. One prominent dataset is the Panel Study of Income Dynamics (PSID), a longitudinal household survey that began in 1968 and covers a nationally representative sample of over 18,000 individuals from 5,000 families in the United States. \citet{quadrini1999importance,fairlie1999absence} both use the  (PSID) to study the financial and human capital transition across generations. 
+
+The second dataset is the Current Population Survey (CPS), which is an important source of labor force data in the United States. To study the entrepreneurship trend, \citet{jiang2023skill, sanchez2023decline, bento2023barriers} both used CPS and found the decline trend in the entrepreneur population. Before calculating the income, investment of two types of entrepreneurs, I also calculated the population trend to ensure my definition of entrepreneurs is the same as previous literature. First, I only included the people who have an active employment status. Second, I define entrepreneurs as "self-employed" from the data. For family background, I only consider parents' employment status first, then I merge parents' employment information with the original data. Figure \ref{nascent} shows the population trend of nascent entrepreneurs, which is consistent with the results from \citet{jiang2023skill, sanchez2023decline}.
+
+\begin{figure}[htp!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{nascententrepreneursharecps.eps}
+    \caption{Population Trend of Nascent Entrepreneurs}
+    \label{nascent}
+\end{figure}
+
+
+Another dataset is also helpful to identify the entrepreneur trend over time but cannot provide detailed information about the entrepreneurs' families. For instance, Survey of Consumer Finance (SCF) is also widely used to observe the entreprenuers population and investment \citep{moskowitz2002returns, cagetti2006entrepreneurship}, however, the question in the inverview is " How did you (or your family living here) first acquire this business; was it bought or invested in, started by you,  inherited, given to you, or some other way?", therefore, we cannot identify whether the business is started by that person or his family.
+
+
+\bibliographystyle{apalike} 
+\bibliography{references}
+
+\end{document}
+
