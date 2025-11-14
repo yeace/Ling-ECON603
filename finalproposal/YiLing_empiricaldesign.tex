@@ -1,0 +1,53 @@
+%Input preamble
+\input{preamble}
+\begin{document}
+
+
+\title{\Large \textbf{Does Entrepreneurship Mitigate or Exacerbate Social Mobility? }}
+\author{Yi Ling}
+
+\date{\today}
+
+\maketitle
+
+\thispagestyle{empty} 
+\doublespacing
+\thispagestyle{empty} 
+
+\section{Research Question}
+This proposal aims to compare the outcomes of two types of entrepreneurs:  nascent entrepreneurs and entrepreneurs whose family is also self-employed, and examine whether the first type faces lower intergenerational mobility than the second type, in other words, can people from a non-entrepreneur family background climb up the social ladder through choosing to start a business?
+\section{Empirical Design}
+
+The two-way fixed effect model is designed to identify the returns in different groups. First, we need to define the returns of entrepreneurs, which are the returns of capital gains from the business, on the equity. Therefore, we need to identify both capital gains and equity precisely. Since  \citet{moskowitz2002returns} calculates the returns using the Survey of Consumer Finance, we can identify both capital gains and equity in the same logit using PSID as well. Since PSID provides both business income (profits) and labor income (wages), and is consistent with \citet{moskowitz2002returns}, we can also consider retained earnings as the ratio $\gamma$ of the profits. The capital gain is calculated in this way:
+
+\begin{equation}
+    Capital\ Gain _{t}=Profits _{t} (1-\gamma )-Wage _{t}
+    \label{capital_gain}
+\end{equation}
+
+PSID also provides much information about the household head's wealth, which includes assets, stocks, and other real estate. Denote that we have $K$ types of assets, the equity of the entrepreneur $i$ in time $t$ is:
+
+\begin{equation}
+    Equity _{t}= \sum_{k=1}^{k=K} Assets _{ikt} 
+    \label{market_value}
+\end{equation}
+
+For workers, since salary is the only source of income, we calculate the returns of wages on equity, $\lambda_t$ and $\theta_i$ control time fixed effect and individual fixed effect, and $W_{it}$ control workers' education level and age, the baseline model is:
+
+\begin{equation}
+	Equity_{it}= \alpha_0+\alpha_1 Wage_{it}+\lambda_t+\theta_i+W_{it}+\eta_{it}
+\end{equation}
+
+For entrepreneurs, we control for individual fixed effects $\iota_i$ because different types of firms might generate different revenues. For example, technology companies tend to have higher revenues than manufacturing firms. Additionally, we control for time fixed effects $\gamma_t$ because monetary and fiscal shocks in certain years could affect the revenues of all firms. Furthermore, let $SelfEmployed_{it}$ be a dummy variable indicating whether the household head's parents are self-employed. $X_{it}$ denotes other control variables, including the education level and age of the entrepreneurs. Finally, the two-way fixed effects model is set as:
+
+ \begin{equation}
+    Equity_{it}= \beta_0+\beta_1 CapitalGain_{it}+\beta_2 CapitalGain_{it}* SelfEmployed_{it}+\gamma_t+\iota_i+X_{it}+\epsilon_{it}
+\end{equation}
+
+$\beta_0+\beta_1$ depicts the returns of entrepreneurs who come from self-employed families, while $\beta_0$ shows the returns of nascent entrepreneurs. From the value of $\beta_0$ and $\beta_1$, we can compare the returns of two types of entrepreneurs.
+
+\bibliographystyle{apalike} 
+\bibliography{references}
+
+\end{document}
+
