@@ -13,27 +13,26 @@
 This proposal aims to compare the outcomes of two types of entrepreneurs: nascent entrepreneurs and entrepreneurs whose family is also self-employed, and examine whether the first type faces lower intergenerational mobility than the second type. In other words, can people from a non-entrepreneur family background climb up the social ladder through choosing to start a business?
 
 \section{Empirical Design}
-The casualty strategy is designed to compare the returns of the worker and the two types of entrepreneurs.
+The casualty strategy is designed to compare the returns of the worker and the two types of entrepreneurs. First, we can calculate the returns following the same logit from \citet{moskowitz2002returns}:
 
-First, we can calculate the returns following the same logit from \citet{moskowitz2002returns}
 \begin{equation}
-R_{t,t+1} = \frac{\text{Equity}_{t+1} + 1 \times \text{Capital Gain}_{t+1}}{\text{Equity}_{t+1}} \label{eq:returns}
+R_{t,t+1} = \frac{\text{Equity}_{t+1} +  \text{Capital Gain}_{t+1}}{\text{Equity}_{t+1}} \label{eq:returns}
 \end{equation}
 
-Then for each household, we have the returns each year either from business or from salaried work.
+Then for each household, we have the returns each year either from business or from salaried work. Second, since both CPS and PSID provide annual information about their class of work, we can identify the year of the household started the business. Therefore, an event study can be designed to see the impact of starting a business on the returns to work, and set up 6-year windows, comparing the returns 3 years before they chose to be an entrepreneur, and 3 years after they chose to become an entrepreneur.
 
-Second, since both CPS and PSID provide annual information about their class of work, we can identify the year of the household starting the business. Therefore, an event study can be designed to see the impact of starting a business on the returns to work , and set up 6-year windows, comparing the returns 3 years before they chose to be an entrepreneur, and 3 years after they chose to become an entrepreneur.
+Specifically, the strategy is set in this way:
 
-Specifically, the strategy is set in this way (corrected formula based on previous conversation):
 \begin{equation}
 Y_{it} = \sum_{k \neq -1, k \in \mathcal{K}} \beta_k \mathbf{1}[rel\_year_{it} = k] + \theta_{i} + \lambda_{t} + X_{it}\gamma + \epsilon_{it}
 \end{equation}
+
 In this model, $Y_{it}$ represents household returns, and $rel\_year$ denotes the number of years since the transition to entrepreneurship. The terms $\theta_{i}$ and $\lambda_{t}$ control for individual fixed effects and time fixed effects, respectively. Additionally, the vector $X_{it}$ includes control variables for age, education, and marital status.
 
 \section{Results}
-I am working on merging the data from PSID. I finished merging the household individual data with family data for 2015, which linked family heads to their parents, yielded 468 child-father pairs. Within this sample, 44 children (9.4\%) are identified as entrepreneurs. The subsequent steps involve merging data from other years and determining the parents' pre-transition employment status to prepare for the empirical strategy.
+I am working on merging the data from PSID. I finished merging the household individual data with family data for 2015, which linked family heads to their parents, yielding 468 child-father pairs. Within this sample, 44 children (9.4\%) are identified as entrepreneurs. The subsequent steps involve merging data from other years and determining the parents' pre-transition employment status to prepare for the empirical strategy.
 
-In the meantime, I also check the availability of CPS in case I fail to match the data in PSID. From the panel data, I can define the time the household starts to do business. Table 1 shows the frequency of the households with the time of entering the business. From the data, we can see in each year, there are many households that start their business, which enables me to set up the event study strategy.
+In the meantime, I also check the availability of CPS in case I fail to match the data in PSID. From the panel data, I can define the time the household starts to do business. Table 1 shows the frequency of households with the time of entering the business. From the data, we can see in each year, there are many households that start their business, which enables me to set up the event study strategy.
 
 
 \begin{table}[]
