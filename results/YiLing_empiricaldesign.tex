@@ -1,0 +1,87 @@
+\input{preamble}
+\begin{document}
+
+
+\title{Does Entrepreneurship Mitigate or Exacerbate Social Mobility?}
+\author{Yi Ling}
+
+\date{November 21, 2025}
+
+\maketitle
+
+\section{Research Question}
+This proposal aims to compare the outcomes of two types of entrepreneurs: nascent entrepreneurs and entrepreneurs whose family is also self-employed, and examine whether the first type faces lower intergenerational mobility than the second type. In other words, can people from a non-entrepreneur family background climb up the social ladder through choosing to start a business?
+
+\section{Empirical Design}
+The casualty strategy is designed to compare the returns of the worker and the two types of entrepreneurs.
+
+First, we can calculate the returns following the same logit from \citet{moskowitz2002returns}
+\begin{equation}
+R_{t,t+1} = \frac{\text{Equity}_{t+1} + 1 \times \text{Capital Gain}_{t+1}}{\text{Equity}_{t+1}} \label{eq:returns}
+\end{equation}
+
+Then for each household, we have the returns each year either from business or from salaried work.
+
+Second, since both CPS and PSID provide annual information about their class of work, we can identify the year of the household starting the business. Therefore, an event study can be designed to see the impact of starting a business on the returns to work , and set up 6-year windows, comparing the returns 3 years before they chose to be an entrepreneur, and 3 years after they chose to become an entrepreneur.
+
+Specifically, the strategy is set in this way (corrected formula based on previous conversation):
+\begin{equation}
+Y_{it} = \sum_{k \neq -1, k \in \mathcal{K}} \beta_k \mathbf{1}[rel\_year_{it} = k] + \theta_{i} + \lambda_{t} + X_{it}\gamma + \epsilon_{it}
+\end{equation}
+In this model, $Y_{it}$ represents household returns, and $rel\_year$ denotes the number of years since the transition to entrepreneurship. The terms $\theta_{i}$ and $\lambda_{t}$ control for individual fixed effects and time fixed effects, respectively. Additionally, the vector $X_{it}$ includes control variables for age, education, and marital status.
+
+\section{Results}
+I am working on merging the data from PSID. I finished merging the household individual data with family data for 2015, which linked family heads to their parents, yielded 468 child-father pairs. Within this sample, 44 children (9.4\%) are identified as entrepreneurs. The subsequent steps involve merging data from other years and determining the parents' pre-transition employment status to prepare for the empirical strategy.
+
+In the meantime, I also check the availability of CPS in case I fail to match the data in PSID. From the panel data, I can define the time the household starts to do business. Table 1 shows the frequency of the households with the time of entering the business. From the data, we can see in each year, there are many households that start their business, which enables me to set up the event study strategy.
+
+
+\begin{table}[]
+\begin{tabular}{@{}lll@{}}
+\toprule
+Year of entry & Number of the new firms & Percent \\ \midrule
+1986          & 8,330                   & 2.29    \\
+1987          & 7,626                   & 2.10    \\
+1988          & 10,660                  & 2.93    \\
+1989          & 9,745                   & 2.68    \\
+1990          & 10,396                  & 2.86    \\
+1991          & 10,210                  & 2.81    \\
+1992          & 9,633                   & 2.65    \\
+1993          & 9,727                   & 2.67    \\
+1994          & 10,199                  & 2.80    \\
+1995          & 6,922                   & 1.90    \\
+1996          & 10,057                  & 2.77    \\
+1997          & 8,889                   & 2.44    \\
+1998          & 8,426                   & 2.32    \\
+1999          & 8,391                   & 2.31    \\
+2000          & 8,365                   & 2.30    \\
+2001          & 12,698                  & 3.49    \\
+2002          & 13,303                  & 3.66    \\
+2003          & 13,515                  & 3.72    \\
+2004          & 12,990                  & 3.57    \\
+2005          & 13,773                  & 3.79    \\
+2006          & 13,338                  & 3.67    \\
+2007          & 13,385                  & 3.68    \\
+2008          & 12,892                  & 3.54    \\
+2009          & 12,724                  & 3.50    \\
+2010          & 12,354                  & 3.40    \\
+2011          & 11,703                  & 3.22    \\
+2012          & 11,423                  & 3.14    \\
+2013          & 11,618                  & 3.19    \\
+2014          & 10,562                  & 2.90    \\
+2015          & 11,247                  & 3.09    \\
+2016          & 10,526                  & 2.89    \\
+2017          & 10,441                  & 2.87    \\
+2018          & 10,338                  & 2.84    \\
+2019          & 7,300                   & 2.01    \\
+Total         & 363,706                 & 100.00  \\ \bottomrule
+\caption{Frequency of Entrepreneur}
+\end{tabular}
+\end{table}
+
+
+\clearpage
+\bibliographystyle{apalike} 
+\bibliography{references}
+
+\end{document}
