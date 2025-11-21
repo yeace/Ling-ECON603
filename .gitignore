@@ -161,3 +161,4 @@ pythontex-files-*/
 *.xwm
 
 ## Folders to ignore
+.DS_Store
